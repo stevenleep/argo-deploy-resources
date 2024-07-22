@@ -49,5 +49,5 @@ spec:
           periodSeconds: 10
         ports:
         - containerPort:  80
-          name:  vue3-boilerplate
+          name:  v3bp
       restartPolicy: Always
