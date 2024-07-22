@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  vue3-boilerplate
+  namespace: boilerplate
+  labels:
+    app:  vue3-boilerplate
+spec:
+  selector:
+    matchLabels:
+      app: vue3-boilerplate
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  vue3-boilerplate
+    spec:
+      containers:
+      - name:  vue3-boilerplate
+        image:  registry-vpc.cn-chengdu.aliyuncs.com/westapplications/vue3-boilerplate:lastest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 3
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 2
+          successThreshold: 1
+          failureThreshold: 3
+          periodSeconds: 10
+        ports:
+        - containerPort:  80
+          name:  vue3-boilerplate
+      restartPolicy: always
