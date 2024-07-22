@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     app: vue3-boilerplate
-  type: ClusterIP
+  type: NodePort
   sessionAffinity: None
   sessionAffinityConfig:
     clientIP:
