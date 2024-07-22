@@ -50,4 +50,4 @@ spec:
         ports:
         - containerPort:  80
           name:  vue3-boilerplate
-      restartPolicy: always
+      restartPolicy: Always
