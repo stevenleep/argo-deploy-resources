@@ -321,7 +321,12 @@ subjects:
 ---
 apiVersion: v1
 data:
-  allow-snippet-annotations: "false"
+  ssl-redirect: "false"
+  force-ssl-redirect: "false"
+  use-forwarded-headers: "true"
+  hsts: "false"
+  hsts-include-subdomains: "false"
+  hsts-max-age: "0"
 kind: ConfigMap
 metadata:
   labels:
@@ -421,6 +426,7 @@ spec:
         app.kubernetes.io/part-of: ingress-nginx
         app.kubernetes.io/version: 1.11.1
     spec:
+      hostNetwork: true
       containers:
         - args:
             - /nginx-ingress-controller

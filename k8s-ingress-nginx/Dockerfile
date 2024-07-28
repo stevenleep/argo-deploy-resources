@@ -1,1 +1,0 @@
-FROM registry.cn-chengdu.aliyuncs.com/insightlinks/ingress-nginx-kube-webhook-certgen:latest
