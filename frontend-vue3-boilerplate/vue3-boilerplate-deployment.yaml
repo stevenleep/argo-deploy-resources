@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name:  vue3-boilerplate
-        image:  registry-vpc.cn-chengdu.aliyuncs.com/westapplications/vue3-boilerplate:647449d5b03a954ff525aa470a867a3d7bdb98e6
+        image:  registry.cn-chengdu.aliyuncs.com/westapplications/vue3-boilerplate:647449d5b03a954ff525aa470a867a3d7bdb98e6
         resources:
           requests:
             cpu: 100m
