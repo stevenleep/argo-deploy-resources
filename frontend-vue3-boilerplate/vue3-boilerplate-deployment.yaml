@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: vue3-boilerplate
-  replicas: 2
+  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 25%
